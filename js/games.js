@@ -89,7 +89,7 @@
 
   function renderGameCard(game, lang, strings, nowMs) {
     var t = BvM.i18n.t, state = gameState(game, nowMs);
-    var card = el("article", "card card--" + game.theme);
+    var card = el("article", "card card--" + game.theme + " card--" + state.status);
     card.id = "game-" + game.id;
 
     var icon = el("img", "icon");
