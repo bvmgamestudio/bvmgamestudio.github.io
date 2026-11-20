@@ -34,9 +34,10 @@ Dikkat edilecekler:
 
 ## Yeni oyun eklemek
 
-1. 1024×1024 boyutundaki ikonu proje klasöründeki `assets/` klasörüne koy. `tools/build_assets.py` aracıyla 512 px WebP üret, ya da kendin 512×512 boyutunda bir `.webp` hazırlayıp `assets/img/` klasörüne koy.
-2. `js/content.js` içindeki `"games"` listesine yeni bir bölüm ekle. En kolayı mevcut oyunlardan birini kopyalayıp değiştirmek. `"id"`, `"name"`, `"icon"`, `"description"` ve linkleri güncelle.
-3. `"theme"` değeri kartın rengini belirler: Shrink & Score için `"sns"` (yeşil/turuncu), Vinedril için `"vin"` (kahve/turkuaz). Yeni oyuna kendi renklerini vermek için `css/site.css` içinde `.card--vin` kısmını kopyalayıp yeni bir tema yaz.
+1. Oyunun ikonunu 512×512 boyutunda `.webp` olarak kaydet ve `assets/img/` klasörüne koy (örnek: `assets/img/yeni-oyun-512.webp`).
+2. `js/content.js` içindeki `"games"` listesine yeni bir bölüm ekle. En kolayı mevcut oyunlardan birini kopyalayıp değiştirmek. `"id"`, `"name"`, `"icon"`, `"description"`, linkler ve `"privacy"` alanını güncelle.
+3. **Gizlilik sayfası:** `privacy/vinedril.html` dosyasını kopyalayıp `privacy/<id>.html` adıyla kaydet. İçindeki `<article data-lang="en">` ve `<article data-lang="tr">` bloklarının içeriğini yeni oyunun politikasıyla değiştir. `"privacy"` alanına `"privacy/<id>.html"` yazdığında, alt bilgideki gizlilik linki bütün sayfalarda kendiliğinden görünür.
+4. `"theme"` değeri kartın rengini belirler: Shrink & Score için `"sns"` (yeşil/turuncu), Vinedril için `"vin"` (kahve/turkuaz). Yeni oyuna kendi renklerini vermek için `css/site.css` içinde `.card--vin` kısmını kopyalayıp yeni bir tema yaz.
 
 ## Bilgisayarında önizleme
 
@@ -49,6 +50,8 @@ python -m http.server 8000
 Sonra tarayıcıda http://localhost:8000 adresini aç.
 
 ## Yayınlamak
+
+**Önce mutlaka önizle.** `js/content.js` dosyasında eksik bir virgül ya da tırnak, oyun kartlarının yerine sade bir yedek liste çıkmasına yol açar. Önizlemede kartları görüyorsan yayınlayabilirsin.
 
 ```
 git add .

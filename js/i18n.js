@@ -9,8 +9,9 @@
 
   // Order: valid ?lang= → valid stored choice → primary browser language → en.
   function pickLang(opts) {
-    var param = /[?&]lang=([^&#]*)/.exec(opts.search || "");
-    var fromUrl = valid(param && decodeURIComponent(param[1]).toLowerCase());
+    var param = /[?&]lang=([^&#]*)/.exec(opts.search || ""), raw = null;
+    try { raw = param && decodeURIComponent(param[1]).toLowerCase(); } catch (e) { raw = null; }
+    var fromUrl = valid(raw);
     if (fromUrl) return fromUrl;
     var fromStore = valid(opts.stored);
     if (fromStore) return fromStore;
