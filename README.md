@@ -59,5 +59,5 @@ git push
 ## Notlar
 
 - Sitede analitik ve çerez yok. Tarayıcıda sadece ziyaretçinin dil tercihi (`bvm-lang`) saklanıyor.
-- Yazı tipleri (Fredoka ve Nunito, SIL Open Font License) sitenin kendi dosyalarından yükleniyor, Google'a istek gitmiyor.
+- Yazı tipleri (Baloo 2 ve Nunito, SIL Open Font License) sitenin kendi dosyalarından yükleniyor, Google'a istek gitmiyor.
 - App Store ve Google Play rozetleri Apple'a ve Google'a aittir. Kullanım kurallarına göre rozetlerin şekli ve rengi değiştirilmemeli.
