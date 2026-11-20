@@ -3,43 +3,97 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BvM Studio</title>
-<meta name="description" content="BvM Studio makes casual mobile games. Home of Shrink & Score.">
-<style>
-  :root { --bg: #ffffff; --fg: #1d2330; --muted: #5b6475; --accent: #3a7bff; --line: #e3e7ef; }
-  @media (prefers-color-scheme: dark) {
-    :root { --bg: #0b0f16; --fg: #e8ecf3; --muted: #9aa3b5; --accent: #6b9dff; --line: #262c38; }
-  }
-  body { margin: 0; background: var(--bg); color: var(--fg);
-    font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
-  main { max-width: 640px; margin: 0 auto; padding: 48px 16px 64px; }
-  h1 { font-size: 2rem; margin: 0 0 4px; }
-  h2 { font-size: 1.2rem; margin: 36px 0 8px; }
-  p, li { color: var(--fg); }
-  .muted { color: var(--muted); }
-  a { color: var(--accent); }
-  .card { border: 1px solid var(--line); border-radius: 12px; padding: 16px 20px; }
-  ul { padding-left: 20px; }
-</style>
+<title>BvM Game Studio · Indie mobile games</title>
+<meta name="description" data-i18n-content="meta.description" content="BvM Game Studio makes colorful indie mobile games. Play Shrink &amp; Score and pre-register for Vinedril: Logic Puzzle.">
+<meta name="theme-color" content="#0b0d14">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="BvM Game Studio">
+<meta property="og:title" content="BvM Game Studio">
+<meta property="og:description" content="Colorful indie mobile games: Shrink &amp; Score is out now, Vinedril: Logic Puzzle is coming soon.">
+<meta property="og:url" content="https://bvmgamestudio.github.io/">
+<meta property="og:image" content="https://bvmgamestudio.github.io/assets/img/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/fredoka-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/nunito-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/site.css">
 </head>
 <body>
+
+<header class="nav">
+  <div class="nav__inner">
+    <a class="nav__logo" href="./"><img src="assets/img/bvm-logo.webp" alt="BvM Game Studio" width="640" height="312"></a>
+    <nav class="nav__links" aria-label="Main">
+      <a href="#games" data-i18n="nav.games">Games</a>
+      <a href="#about" data-i18n="nav.about">About</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language / Dil">
+      <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-set-lang="tr" aria-pressed="false">TR</button>
+    </div>
+  </div>
+</header>
+
 <main>
-<h1>BvM Studio</h1>
-<p class="muted">Casual mobile games.</p>
+  <section class="hero">
+    <div class="shapes" aria-hidden="true">
+      <span class="shape ball ball--orange"></span>
+      <span class="shape ball ball--yellow"></span>
+      <span class="shape ball ball--orange-sm"></span>
+      <span class="shape block block--teal"></span>
+      <span class="shape block block--amber"></span>
+      <span class="shape block block--green"></span>
+    </div>
+    <h1 class="hero__title">
+      <span data-i18n="hero.title_before">We make</span>
+      <span class="grad" data-i18n="hero.title_highlight">tiny games</span>
+      <span class="hero__after" data-i18n="hero.title_after">you can't put down.</span>
+    </h1>
+    <p class="hero__sub" data-i18n="hero.subtitle">Colorful mobile games from BvM Game Studio, a one-person indie studio.</p>
+  </section>
 
-<h2>Games</h2>
-<div class="card">
-  <strong>Shrink &amp; Score</strong>
-  <p>Hold to shrink, let go to grow. Squeeze through the gaps and stay big to score more.</p>
-  <ul>
-    <li><a href="https://play.google.com/store/apps/details?id=com.shrinkandscore.game">Google Play</a></li>
-    <li><a href="https://apps.apple.com/app/id6826530983">App Store</a></li>
-    <li><a href="https://bvmgamestudio.github.io/shrink-and-score-privacy/">Privacy policy / Gizlilik politikası</a></li>
-  </ul>
-</div>
+  <section id="games" class="games" aria-labelledby="games-title">
+    <h2 id="games-title" class="visually-hidden" data-i18n="nav.games">Games</h2>
+    <div class="games__grid" data-games>
+      <noscript>
+        <ul class="noscript-list">
+          <li><strong>Shrink &amp; Score</strong>:
+            <a href="https://apps.apple.com/app/id6826530983">App Store</a> ·
+            <a href="https://play.google.com/store/apps/details?id=com.shrinkandscore.game">Google Play</a></li>
+          <li><strong>Vinedril: Logic Puzzle</strong>: coming soon / çok yakında</li>
+        </ul>
+      </noscript>
+    </div>
+  </section>
 
-<h2>Contact</h2>
-<p><a href="mailto:bvmgamestudio@gmail.com">bvmgamestudio@gmail.com</a></p>
+  <section id="about" class="info">
+    <h2 data-i18n="about.title">About the studio</h2>
+    <p data-i18n="about.body">BvM Game Studio is one developer making small, colorful mobile games that are easy to pick up and hard to put down. Every game is designed, built and polished by hand.</p>
+  </section>
+
+  <section id="contact" class="info info--contact">
+    <h2 data-i18n="contact.title">Say hi</h2>
+    <p data-i18n="contact.body">Questions, bug reports, ideas or press? Write to me. I read every message.</p>
+    <a class="email" data-contact-email href="mailto:bvmgamestudio@gmail.com">bvmgamestudio@gmail.com</a>
+  </section>
 </main>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <img class="footer__logo" src="assets/img/bvm-logo.webp" alt="BvM Game Studio" width="640" height="312" loading="lazy">
+    <ul class="footer__links">
+      <li><a href="privacy/shrink-and-score.html">Shrink &amp; Score · <span data-i18n="footer.privacy">Privacy</span></a></li>
+      <li><a href="privacy/vinedril.html">Vinedril · <span data-i18n="footer.privacy">Privacy</span></a></li>
+    </ul>
+    <p class="footer__copy">© <span data-year>2026</span> BvM Game Studio. <span data-i18n="footer.rights">All rights reserved.</span></p>
+  </div>
+</footer>
+
+<script src="js/content.js" defer></script>
+<script src="js/i18n.js" defer></script>
+<script src="js/games.js" defer></script>
+<script src="js/main.js" defer></script>
 </body>
 </html>
