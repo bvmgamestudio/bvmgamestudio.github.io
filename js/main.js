@@ -70,6 +70,23 @@
     renderGames(lang);
   }
 
+  // A link like "#kvkk" may point into the language block that is hidden right now.
+  function langForHash(root, hash) {
+    if (!hash || hash.length < 2) return null;
+    var id = decodeURIComponent(hash.slice(1));
+    var target = root.querySelector('[id="' + id.replace(/"/g, '\\"') + '"]');
+    var block = target && target.closest("[data-lang]");
+    return block && block.hidden ? block.getAttribute("data-lang") : null;
+  }
+
+  function followHash() {
+    var lang = langForHash(document, window.location.hash);
+    if (!lang) return;
+    setLang(lang);
+    var target = document.getElementById(decodeURIComponent(window.location.hash.slice(1)));
+    if (target) target.scrollIntoView();
+  }
+
   function init() {
     var lang = BvM.i18n.pickLang({
       search: window.location.search,
@@ -78,6 +95,8 @@
     });
     fillContact();
     setLang(lang);
+    followHash();
+    window.addEventListener("hashchange", followHash);
     document.querySelectorAll("[data-set-lang]").forEach(function (btn) {
       btn.addEventListener("click", function () {
         var next = btn.getAttribute("data-set-lang");
@@ -91,7 +110,7 @@
     window.setInterval(tickCountdowns, 30000);
   }
 
-  BvM.main = { applyTranslations: applyTranslations, readStoredLang: readStoredLang, init: init };
+  BvM.main = { applyTranslations: applyTranslations, readStoredLang: readStoredLang, langForHash: langForHash, init: init };
 
   if (!window.BVM_NO_AUTO_INIT) {
     if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
