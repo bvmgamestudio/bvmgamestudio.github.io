@@ -127,7 +127,7 @@ p { margin: 0; }
   background: radial-gradient(circle at 35% 30%, #ffb27a, var(--sns-orange) 55%, #c4440f); }
 .ball--yellow { width: 26px; height: 26px; left: 16%; bottom: 12%; animation-duration: 8.5s;
   background: radial-gradient(circle at 35% 30%, #fff7a0, var(--sns-yellow) 60%, #c7a90c); }
-.ball--orange-sm { width: 18px; height: 18px; right: 30%; top: 10%; animation-duration: 9s; opacity: .8;
+.ball--orange-sm { width: 18px; height: 18px; right: 30%; top: 22px; animation-duration: 9s; opacity: .8;
   background: radial-gradient(circle at 35% 30%, #ffb27a, var(--sns-orange) 60%); }
 .block { border-radius: 8px; box-shadow: inset 0 -4px 0 rgba(0, 0, 0, .18); }
 .block--teal { width: 22px; height: 60px; right: 7%; top: 18%; --r: 14deg; background: var(--vin-teal); animation-duration: 7.5s; }
@@ -137,10 +137,16 @@ p { margin: 0; }
   0%, 100% { transform: translateY(0) rotate(var(--r)); }
   50% { transform: translateY(-12px) rotate(calc(var(--r) + 6deg)); }
 }
+@media (max-width: 1099px) {
+  .ball--orange { width: 46px; height: 46px; left: -12px; top: 14px; }
+  .block--teal { right: -6px; top: 16px; height: 48px; }
+  .block--green { right: -8px; bottom: 34%; }
+  .ball--orange-sm { top: 6px; }
+}
 @media (max-width: 639px) {
   .shape { opacity: .55; }
   .ball--orange { width: 40px; height: 40px; left: -8px; top: 12px; }
-  .block--teal { right: 6px; top: 14px; height: 44px; }
+  .block--teal { right: -6px; top: 8px; height: 36px; }
   .ball--orange-sm, .block--green { display: none; }
 }
 
