@@ -72,6 +72,7 @@ window.SITE_CONTENT = {
       "id": "vinedril",
       "name": "Vinedril: Logic Puzzle",
       "theme": "vin",
+      "featured": true,
       "icon": "assets/img/vinedril-512.webp",
       "status": "soon",
       "releaseDate": null,

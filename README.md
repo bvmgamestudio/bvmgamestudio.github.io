@@ -39,6 +39,10 @@ Dikkat edilecekler:
 3. **Gizlilik sayfası:** `privacy/vinedril.html` dosyasını kopyalayıp `privacy/<id>.html` adıyla kaydet. İçindeki `<article data-lang="en">` ve `<article data-lang="tr">` bloklarının içeriğini yeni oyunun politikasıyla değiştir. `"privacy"` alanına `"privacy/<id>.html"` yazdığında, alt bilgideki gizlilik linki bütün sayfalarda kendiliğinden görünür.
 4. `"theme"` değeri kartın rengini belirler: Shrink & Score için `"sns"` (yeşil/turuncu), Vinedril için `"vin"` (kahve/turkuaz). Yeni oyuna kendi renklerini vermek için `css/site.css` içinde `.card--vin` kısmını kopyalayıp yeni bir tema yaz.
 
+## Telefonda en üstteki oyun
+
+Telefonda kartlar alt alta dizilir. `"featured": true` yazan oyun, yayında olsun ya da olmasın, her zaman en üstte görünür. Şu an bu oyun Vinedril. Başka bir oyunu öne çıkarmak için `"featured": true` satırını o oyunun bölümüne taşı. Masaüstünde kartlar yan yana durduğu için bu ayar oradaki sırayı değiştirmez.
+
 ## Bilgisayarında önizleme
 
 Bu klasörde bir terminal aç ve şu komutu çalıştır:

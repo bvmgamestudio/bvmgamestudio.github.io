@@ -153,9 +153,10 @@ p { margin: 0; }
 /* ===== Games ===== */
 .games { max-width: var(--wrap); margin: 0 auto; padding: 8px 16px 24px; }
 .games__grid { display: grid; gap: 20px; }
-/* On phones (one column) upcoming games come first; side by side, content order stays. */
+/* On phones (one column) the game marked "featured" in content.js comes first;
+   side by side, content order stays. */
 @media (max-width: 759px) {
-  .card--soon { order: -1; }
+  .card--featured { order: -1; }
 }
 @media (min-width: 760px) {
   .games { padding: 8px 24px 32px; }
