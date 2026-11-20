@@ -1,0 +1,94 @@
+window.SITE_CONTENT = {
+  "strings": {
+    "en": {
+      "nav.games": "Games",
+      "nav.about": "About",
+      "nav.contact": "Contact",
+      "hero.title_before": "We make",
+      "hero.title_highlight": "tiny games",
+      "hero.title_after": "you can't put down.",
+      "hero.subtitle": "Colorful mobile games from BvM Game Studio, a one-person indie studio.",
+      "badge.live": "Out now",
+      "badge.soon": "Coming soon",
+      "cta.preregister": "Pre-register",
+      "cta.coming_soon": "Coming soon",
+      "countdown.days": "Days",
+      "countdown.hours": "Hours",
+      "countdown.minutes": "Min",
+      "about.title": "About the studio",
+      "about.body": "BvM Game Studio is one developer making small, colorful mobile games that are easy to pick up and hard to put down. Every game is designed, built and polished by hand.",
+      "contact.title": "Say hi",
+      "contact.body": "Questions, bug reports, ideas or press? Write to me. I read every message.",
+      "footer.privacy": "Privacy",
+      "footer.rights": "All rights reserved.",
+      "privacy.back": "Back to home",
+      "meta.description": "BvM Game Studio makes colorful indie mobile games. Play Shrink & Score and pre-register for Vinedril: Logic Puzzle."
+    },
+    "tr": {
+      "nav.games": "Oyunlar",
+      "nav.about": "Hakkında",
+      "nav.contact": "İletişim",
+      "hero.title_before": "Elinden bırakamayacağın",
+      "hero.title_highlight": "küçük oyunlar",
+      "hero.title_after": "yapıyoruz.",
+      "hero.subtitle": "Tek kişilik bağımsız stüdyo BvM Game Studio'dan rengârenk mobil oyunlar.",
+      "badge.live": "Yayında",
+      "badge.soon": "Yakında",
+      "cta.preregister": "Ön kayıt ol",
+      "cta.coming_soon": "Çok yakında",
+      "countdown.days": "Gün",
+      "countdown.hours": "Saat",
+      "countdown.minutes": "Dk",
+      "about.title": "Stüdyo hakkında",
+      "about.body": "BvM Game Studio, kolay başlanan ama zor bırakılan küçük ve renkli mobil oyunlar yapan tek bir geliştirici. Her oyun baştan sona elde tasarlanıyor, geliştiriliyor ve cilalanıyor.",
+      "contact.title": "Merhaba de",
+      "contact.body": "Soru, hata bildirimi, fikir ya da basın? Bana yaz, her mesajı okuyorum.",
+      "footer.privacy": "Gizlilik",
+      "footer.rights": "Tüm hakları saklıdır.",
+      "privacy.back": "Ana sayfaya dön",
+      "meta.description": "BvM Game Studio rengârenk bağımsız mobil oyunlar yapar. Shrink & Score'u oyna, Vinedril: Logic Puzzle için ön kayıt ol."
+    }
+  },
+  "games": [
+    {
+      "id": "shrink-and-score",
+      "name": "Shrink & Score",
+      "theme": "sns",
+      "icon": "assets/img/shrink-and-score-512.webp",
+      "status": "live",
+      "releaseDate": null,
+      "links": {
+        "appStore": "https://apps.apple.com/app/id6826530983",
+        "googlePlay": "https://play.google.com/store/apps/details?id=com.shrinkandscore.game",
+        "preregister": null
+      },
+      "privacy": "privacy/shrink-and-score.html",
+      "description": {
+        "en": "Hold to shrink, let go to grow. Squeeze through the gaps and stay big to score more.",
+        "tr": "Basılı tut ve küçül, bırak ve büyü. Boşluklardan sıyrıl, büyük kal, daha çok puan topla."
+      }
+    },
+    {
+      "id": "vinedril",
+      "name": "Vinedril: Logic Puzzle",
+      "theme": "vin",
+      "icon": "assets/img/vinedril-512.webp",
+      "status": "soon",
+      "releaseDate": null,
+      "links": {
+        "appStore": null,
+        "googlePlay": null,
+        "preregister": null
+      },
+      "privacy": "privacy/vinedril.html",
+      "description": {
+        "en": "Tap a seed and its vine grows until it hits something. Cover every square of soil, but order matters. Every level has exactly one solution, no guessing needed.",
+        "tr": "Bir tohuma dokun, sarmaşığı bir engele çarpana kadar büyüsün. Toprağın her karesini kapla ama sıra önemli. Her bölümün tek bir çözümü var, tahmine gerek yok."
+      }
+    }
+  ],
+  "contact": {
+    "email": "bvmgamestudio@gmail.com",
+    "socials": []
+  }
+};
