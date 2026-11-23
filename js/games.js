@@ -54,11 +54,16 @@
     return box;
   }
 
-  function renderStores(game, lang) {
+  function renderStores(game, lang, strings) {
     var wrap = el("div", "stores");
     ["appStore", "googlePlay"].forEach(function (key) {
       var url = game.links && game.links[key];
       if (!url) return;
+      if (url === "soon") {
+        // Our own pill: official badges must not be recolored or altered.
+        if (key === "googlePlay") wrap.appendChild(el("span", "store-soon", BvM.i18n.t(strings, lang, "store.google_play_soon")));
+        return;
+      }
       var b = STORE_BADGES[key];
       var a = el("a", "store store--" + b.file);
       a.setAttribute("href", url);
@@ -104,7 +109,7 @@
     card.appendChild(el("p", "card__desc", (game.description && (game.description[lang] || game.description.en)) || ""));
 
     if (state.status === "live") {
-      card.appendChild(renderStores(game, lang));
+      card.appendChild(renderStores(game, lang, strings));
     } else {
       if (state.showCountdown) card.appendChild(renderCountdown(state.releaseMs, nowMs, lang, strings));
       card.appendChild(renderPreregister(game, lang, strings));

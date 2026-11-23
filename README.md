@@ -31,6 +31,7 @@ Dikkat edilecekler:
 1. **Ön kayıt açıldığında:** `"preregister": null` değerini `"preregister": "https://play.google.com/store/apps/details?id=..."` yap. Buton tıklanabilir hale gelir.
 2. **Çıkış tarihi belli olunca:** `"releaseDate": null` değerini `"releaseDate": "2026-12-15T10:00:00+03:00"` gibi yaz. Kartta geri sayım belirir. Tarih geçince geri sayım kendiliğinden kaybolur.
 3. **Oyun çıktığında:** `"status": "soon"` değerini `"status": "live"` yap ve `"appStore"` ile `"googlePlay"` alanlarına mağaza linklerini yaz. Kartta "Yayında" etiketi ve mağaza rozetleri görünür.
+4. **Bir mağazada henüz yoksa:** O mağazanın linkine `"soon"` yaz (örnek: `"googlePlay": "soon"`). Kartta rozet yerine "Google Play: çok yakında" etiketi görünür. Link belli olunca `"soon"` yerine linki yaz.
 
 ## Yeni oyun eklemek
 
@@ -55,7 +56,17 @@ Sonra tarayıcıda http://localhost:8000 adresini aç.
 
 ## Yayınlamak
 
-**Önce mutlaka önizle.** `js/content.js` dosyasında eksik bir virgül ya da tırnak, oyun kartlarının yerine sade bir yedek liste çıkmasına yol açar. Önizlemede kartları görüyorsan yayınlayabilirsin.
+**1. Sürüm etiketlerini güncelle.** `css/` ya da `js/` içindeki bir dosyayı (örneğin `content.js`) değiştirdiysen, `site` klasöründe şunu çalıştır:
+
+```
+python ../tools/stamp_versions.py .
+```
+
+Bu komut sayfalardaki `?v=...` etiketlerini yeniler. Böylece ziyaretçilerin tarayıcısı eski dosyalarla yeni sayfayı karıştırmaz.
+
+**2. Önce mutlaka önizle.** `js/content.js` dosyasında eksik bir virgül ya da tırnak, oyun kartlarının yerine sade bir yedek liste çıkmasına yol açar. Önizlemede kartları görüyorsan yayınlayabilirsin.
+
+**3. Gönder:**
 
 ```
 git add .
@@ -65,6 +76,7 @@ git push
 
 ## Notlar
 
+- Yayınladıktan sonra telefonda eski hali görürsen birkaç dakika bekle ya da sayfayı yenile. GitHub Pages dosyaları tarayıcıda 10 dakikaya kadar önbellekte tutturuyor.
 - Sitede analitik ve çerez yok. Tarayıcıda sadece ziyaretçinin dil tercihi (`bvm-lang`) saklanıyor.
 - Yazı tipleri (Baloo 2 ve Nunito, SIL Open Font License) sitenin kendi dosyalarından yükleniyor, Google'a istek gitmiyor.
 - App Store ve Google Play rozetleri Apple'a ve Google'a aittir. Kullanım kurallarına göre rozetlerin şekli ve rengi değiştirilmemeli.

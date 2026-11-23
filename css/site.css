@@ -206,6 +206,13 @@ p { margin: 0; }
 .store { display: inline-block; border-radius: 10px; transition: transform .2s; }
 .store:hover { transform: scale(1.04); }
 .store img { height: 48px; width: auto; }
+.store-soon {
+  display: inline-flex; align-items: center; gap: 8px; height: 48px; padding: 0 16px;
+  border-radius: 10px; border: 1.5px dashed rgba(255, 255, 255, .45);
+  background: rgba(0, 0, 0, .25); color: var(--ink-soft);
+  font-weight: 800; font-size: .9rem; white-space: nowrap;
+}
+.store-soon::before { content: "▶"; font-size: .8em; color: var(--vin-green); }
 
 .countdown { display: flex; gap: 8px; margin-bottom: 16px; }
 .countdown__cell {
