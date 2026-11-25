@@ -87,6 +87,57 @@
     });
   }
 
+  // Simple monochrome glyphs (currentColor) for the social links; unknown ids get a text link.
+  var SOCIAL_ICONS = {
+    instagram: [
+      ["rect", { x: "3", y: "3", width: "18", height: "18", rx: "5", fill: "none", stroke: "currentColor", "stroke-width": "2" }],
+      ["circle", { cx: "12", cy: "12", r: "4.2", fill: "none", stroke: "currentColor", "stroke-width": "2" }],
+      ["circle", { cx: "17.4", cy: "6.6", r: "1.3", fill: "currentColor" }]
+    ],
+    tiktok: [
+      ["path", { fill: "currentColor", d: "M16.5 3c.4 2.3 1.9 3.9 4.3 4.1v3.1c-1.6 0-3-.5-4.3-1.3v6.3c0 3.3-2.6 5.8-5.8 5.8s-5.8-2.6-5.8-5.8 2.6-5.8 5.8-5.8c.3 0 .6 0 .9.1v3.2c-.3-.1-.6-.2-.9-.2-1.5 0-2.7 1.2-2.7 2.7s1.2 2.7 2.7 2.7 2.7-1.2 2.7-2.7V3h3.1z" }]
+    ],
+    youtube: [
+      ["path", { fill: "currentColor", "fill-rule": "evenodd", d: "M22 8.2c-.2-1.6-1.4-2.8-3-3C16.6 5 12 5 12 5s-4.6 0-7 .2c-1.6.2-2.8 1.4-3 3C2 9.8 2 12 2 12s0 2.2.2 3.8c.2 1.6 1.4 2.8 3 3C7.4 19 12 19 12 19s4.6 0 7-.2c1.6-.2 2.8-1.4 3-3 .2-1.6.2-3.8.2-3.8s0-2.2-.2-3.8zM10 15V9l5.2 3L10 15z" }]
+    ]
+  };
+
+  function socialIcon(id) {
+    var parts = SOCIAL_ICONS[id];
+    if (!parts) return null;
+    var NS = "http://www.w3.org/2000/svg";
+    var svg = document.createElementNS(NS, "svg");
+    svg.setAttribute("viewBox", "0 0 24 24");
+    svg.setAttribute("aria-hidden", "true");
+    svg.setAttribute("focusable", "false");
+    parts.forEach(function (p) {
+      var node = document.createElementNS(NS, p[0]);
+      Object.keys(p[1]).forEach(function (k) { node.setAttribute(k, p[1][k]); });
+      svg.appendChild(node);
+    });
+    return svg;
+  }
+
+  function renderSocials(list, socials) {
+    list.textContent = "";
+    (socials || []).forEach(function (s) {
+      if (!s || !s.url) return;
+      var li = document.createElement("li"), a = document.createElement("a");
+      a.className = "social social--" + s.id;
+      a.setAttribute("href", s.url);
+      a.setAttribute("target", "_blank");
+      a.setAttribute("rel", "noopener");
+      a.setAttribute("aria-label", s.label);
+      a.setAttribute("title", s.label);
+      var icon = socialIcon(s.id);
+      if (icon) a.appendChild(icon);
+      else a.textContent = s.label;
+      li.appendChild(a);
+      list.appendChild(li);
+    });
+    list.hidden = !list.children.length;
+  }
+
   // When content.js is missing or broken, show the static list kept in <noscript>
   // (with scripting on, its contents are plain text, written by us, not user data).
   function showFallback(grid) {
@@ -127,6 +178,9 @@
       languages: navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ""]
     });
     fillContact();
+    document.querySelectorAll("[data-socials]").forEach(function (list) {
+      renderSocials(list, content.contact && content.contact.socials);
+    });
     setLang(lang);
     document.querySelectorAll("[data-set-lang]").forEach(function (btn) {
       btn.addEventListener("click", function () {
@@ -145,7 +199,7 @@
 
   BvM.main = {
     applyTranslations: applyTranslations, readStoredLang: readStoredLang, langForHash: langForHash,
-    renderPrivacyLinks: renderPrivacyLinks, showFallback: showFallback, init: init
+    renderPrivacyLinks: renderPrivacyLinks, renderSocials: renderSocials, showFallback: showFallback, init: init
   };
 
   if (!window.BVM_NO_AUTO_INIT) {

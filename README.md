@@ -44,6 +44,14 @@ Dikkat edilecekler:
 
 Telefonda kartlar alt alta dizilir. `"featured": true` yazan oyun, yayında olsun ya da olmasın, her zaman en üstte görünür. Şu an bu oyun Vinedril. Başka bir oyunu öne çıkarmak için `"featured": true` satırını o oyunun bölümüne taşı. Masaüstünde kartlar yan yana durduğu için bu ayar oradaki sırayı değiştirmez.
 
+## Sosyal medya linkleri
+
+Instagram, TikTok ve YouTube linkleri `js/content.js` içindeki `"socials"` listesinde duruyor. Simgeler İletişim bölümünde ve her sayfanın alt bilgisinde görünür.
+
+- Link değiştirmek için `"url"` değerini düzenle.
+- Bir hesabı kaldırmak için o satırı sil. Liste boşalırsa simgeler hiç görünmez.
+- Yeni bir platform eklersen (örneğin `{ "id": "x", "label": "X", "url": "https://..." }`), simgesi tanımlı değilse yuvarlak bir butonda adı yazar.
+
 ## Bilgisayarında önizleme
 
 Bu klasörde bir terminal aç ve şu komutu çalıştır:

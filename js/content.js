@@ -23,7 +23,8 @@ window.SITE_CONTENT = {
       "footer.rights": "All rights reserved.",
       "privacy.back": "Back to home",
       "meta.description": "BvM Game Studio makes colorful indie mobile games. Play Shrink & Score and Vinedril: Logic Puzzle.",
-      "store.google_play_soon": "Google Play: coming soon"
+      "store.google_play_soon": "Google Play: coming soon",
+      "contact.follow": "Follow along"
     },
     "tr": {
       "nav.games": "Oyunlar",
@@ -48,7 +49,8 @@ window.SITE_CONTENT = {
       "footer.rights": "Tüm hakları saklıdır.",
       "privacy.back": "Ana sayfaya dön",
       "meta.description": "BvM Game Studio rengârenk bağımsız mobil oyunlar yapar. Shrink & Score ve Vinedril: Logic Puzzle'ı oyna.",
-      "store.google_play_soon": "Google Play: çok yakında"
+      "store.google_play_soon": "Google Play: çok yakında",
+      "contact.follow": "Takip et"
     }
   },
   "games": [
@@ -92,6 +94,10 @@ window.SITE_CONTENT = {
   ],
   "contact": {
     "email": "bvmgamestudio@gmail.com",
-    "socials": []
+    "socials": [
+      { "id": "instagram", "label": "Instagram", "url": "https://www.instagram.com/bvmgamestudio/" },
+      { "id": "tiktok", "label": "TikTok", "url": "https://www.tiktok.com/@bvmgamestudio" },
+      { "id": "youtube", "label": "YouTube", "url": "https://www.youtube.com/channel/UC5EkIimMZF59AAG-7mcJgrw" }
+    ]
   }
 };
